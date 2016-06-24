@@ -1,0 +1,40 @@
+{
+    "types": [
+        {
+            "id": 0,
+            "category": 0,
+            "name": "personal",
+            "description": "Fireworks intended for recreational use during holiday celebrations."
+        },
+        {
+            "id": 1,
+            "category": 0,
+            "name": "professional",
+            "description": "Fireworks intended for civic displays and large scale presentations."
+        },
+        {
+            "id": 2,
+            "category": 0,
+            "name": "type 3 fireworks",
+            "description": "Another category for fireworks."
+        },
+        {
+            "id": 3,
+            "category": 1,
+            "name": "construction",
+            "description": "Construction explosives for imploding structures."
+        },
+        {
+            "id": 4,
+            "category": 1,
+            "name": "military",
+            "description": "Full scale explosives for lethal force in military theaters."
+        },
+        {
+            "id": 5,
+            "category": 1,
+            "name": "type 3 of demolition",
+            "description": "Thinking I may make this underwater demolition."
+        }
+    ]
+}
