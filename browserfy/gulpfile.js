@@ -70,7 +70,7 @@ gulp.task('lint', function() {
  */
 gulp.task('watch', function() {
   // Run the link task when any JavaScript file changes
-  gulp.watch(['./src/scripts/**/*.js'], ['lint']);
+  gulp.watch(['./src/**/*.js'], ['lint']);
   gutil.log(gutil.colors.bgGreen('Watching for changes...'));
 });
 
