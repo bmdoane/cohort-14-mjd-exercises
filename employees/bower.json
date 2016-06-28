@@ -1,0 +1,20 @@
+{
+  "name": "employees",
+  "homepage": "https://github.com/bmdoane/cohort-14-mjd-exercises",
+  "authors": [
+    "Brian Doane <brianmdoane@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jQuery": "^3.0.0"
+  }
+}
