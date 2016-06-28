@@ -30,7 +30,7 @@ TenoderaSinensis.prototype = new Tenodera();
 let chineseMantis = new TenoderaSinensis();
 // Add property species name
 chineseMantis.speciesName = "Chinese Mantis";
-console.log("chineseMantis", chineseMantis);
+console.log("Chinese Mantis", chineseMantis);
 
 
 // Making a Wolf
@@ -41,23 +41,17 @@ function Canis() {
 }
 // Species
 function CanisLupus() {
-	this.speciesName = "Gray Wolf";
+	this.genusName = "Canus";
+	this.speciesName = null;
 }
 
 // Link Canidae to animal
 Canis.prototype = new Animal();
 CanisLupus.prototype = new Canis();
 
-Canidae.prototype.setLegCount = (count) => {
-	legCount = count;
-}
-
-Canidae.prototype.getLegCount = function() {
-	return this.legCount;
-}
-
 let grayWolf = new CanisLupus();
-console.log("grayWolf", grayWolf);
+grayWolf.speciesName = "Gray Wolf";
+console.log("Gray Wolf", grayWolf);
 
 
 // Making a monkey
@@ -68,13 +62,15 @@ function Alouatta() {
 }
 // Species
 function AlouattaBelzebul() {
-	this.speciesName = "Red-handed Howler";
+	this.genusName = Alouatta;
+	this.speciesName = null;
 }
 
 Alouatta.prototype = new Animal();
 AlouattaBelzebul.prototype = new Alouatta();
 
 let howler = new AlouattaBelzebul();
+howler.speciesName = "Red-handed Howler"; 
 console.log("Howler", howler);
 
 
@@ -87,11 +83,15 @@ function Carcharodon() {
 
 //Species
 function CarcharodonCarcharias() {
-	this.speciesName = "Great White Shark";
+	this.genusName = "Carcharodon";
+	this.speciesName = null;
 }
 
 Carcharodon.prototype = new Animal();
 CarcharodonCarcharias.prototype = new Carcharodon();
 
 let greatWhite = new CarcharodonCarcharias();
+greatWhite.speciesName = "Great White Shark";
 console.log("Great White", greatWhite);
+
+
