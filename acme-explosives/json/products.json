@@ -1,112 +1,112 @@
 {
-    "products": [{
-        "bottle_rockets": {
-            "id": 0,
-            "type": 0,
-            "name": "Screamers",
-            "description": "Pack of 20 bottle rockets with report."
-        },
-        "m-80's": {
-            "id": 1,
-            "type": 0,
-            "name": "Ka-Boomers",
-            "description": "This is a quarter stick of dynamite that creates quite a stir."
-        },
-        "jumping-jacks": {
-            "id": 2,
-            "type": 0,
-            "name": "Whizzers",
-            "description": "Light these little crackers and they jump all over."
-        },
-        "mortar": {
-            "id": 3,
-            "type": 1,
-            "name": "Skyfall",
-            "description": "Large visual display with assorted patterns."
-        },
-        "aerial_boom": {
-            "id": 4,
-            "type": 1,
-            "name": "Sonic-Boom",
-            "description": "This explosive offers no visual, just a deafening boom crowds love to hate."
-        },
-        "fizzer": {
-            "id": 5,
-            "type": 1,
-            "name": "Night-Sparkle",
-            "description": "Light up the night sky with a 100ft diameter sparkle."
-        },
-        "a_of_type_3": {
-            "id": 6,
-            "type": 2,
-            "name": "letterA",
-            "description": "This is the letter A firework."
-        },
-        "b_of_type_3": {
-            "id": 7,
-            "type": 2,
-            "name": "letterB",
-            "description": "This is the letter B firework."
-        },
-        "c_of_type_3": {
-            "id": 8,
-            "type": 2,
-            "name": "letterC",
-            "description": "This is the letter C firework."
-        },
-        "nitroglycerin": {
-            "id": 9,
-            "type": 3,
-            "name": "DYNOSPLIT",
-            "description": "Nitroglycerin for pre-splitting, cushion blasting, smooth walls."
-        },
-        "gelatin": {
-            "id": 10,
-            "type": 3,
-            "name": "UNIMAX",
-            "description": "Extra gelatin dynamite for hard rock explosive applications."
-        },
-        "plastic": {
-            "id": 11,
-            "type": 3,
-            "name": "Plastisplat",
-            "description": "This is some info about the 3rd type of construction explosive."
-        },
-        "semtex": {
-            "id": 12,
-            "type": 4,
-            "name": "Semtex",
-            "description": "A very pliable, odorless plastic explosive."
-        },
-        "c-4": {
-            "id": 13,
-            "type": 4,
-            "name": "Composition C-4",
-            "description": "C-4 is composed of explosives, plastic binder, plasticizer to make it malleable, and usually a marker or odorizing taggant chemical."
-        },
-        "atom": {
-            "id": 14,
-            "type": 4,
-            "name": "Atom Smasher",
-            "description": "Destroy the enemies large stuff with max power."
-        },
-        "shallow": {
-            "id": 15,
-            "type": 5,
-            "name": "Guppie",
-            "description": "Best way to work your way through a pesky reef."
-        },
-        "mid_depth": {
-            "id": 16,
-            "type": 5,
-            "name": "Dolphin",
-            "description": "Blow up the ocean with our most popular seller."
-        },
-        "deep_water": {
-            "id": 17,
-            "type": 5,
-            "name": "Kraken",
-            "description": "High charged explosive under high pressure at low depths."
-        }
-    }]
+  "products": [
+    {
+      "id": 0,
+      "type": 0,
+      "name": "bottle_rockets",
+      "description": "Pack of 20 bottle rockets with report."
+    },
+    {
+      "id": 1,
+      "type": 0,
+      "name": "m-80's",
+      "description": "This is a quarter stick of dynamite that creates quite a stir."
+    },
+    {
+      "id": 2,
+      "type": 0,
+      "name": "jumping-jacks",
+      "description": "Light these little crackers and they jump all over."
+    },
+    {
+      "id": 3,
+      "type": 1,
+      "name":  "mortar",
+      "description": "Large visual display with assorted patterns."
+    },
+    {
+      "id": 4,
+      "type": 1,
+      "name": "aerial_boom",
+      "description": "This explosive offers no visual, just a deafening boom crowds love to hate."
+    },
+    {
+      "id": 5,
+      "type": 1,
+      "name": "fizzer",
+      "description": "Light up the night sky with a 100ft diameter sparkle."
+    },
+    {
+      "id": 6,
+      "type": 2,
+      "name": "a_of_type_3",
+      "description": "This is the letter A firework."
+    },
+    {
+      "id": 7,
+      "type": 2,
+      "name": "b_of_type_3",
+      "description": "This is the letter B firework."
+    },
+    {
+      "id": 8,
+      "type": 2,
+      "name": "c_of_type_3",
+      "description": "This is the letter C firework."
+    },
+    {
+      "id": 9,
+      "type": 3,
+      "name": "nitroglycerin",
+      "description": "Nitroglycerin for pre-splitting, cushion blasting, smooth walls."
+    },
+    {
+      "id": 10,
+      "type": 3,
+      "name": "gelatin",
+      "description": "Extra gelatin dynamite for hard rock explosive applications."
+    },
+    {
+      "id": 11,
+      "type": 3,
+      "name": "plastic",
+      "description": "This is some info about the 3rd type of construction explosive."
+    },
+    {
+      "id": 12,
+      "type": 4,
+      "name": "semtex",
+      "description": "A very pliable, odorless plastic explosive."
+    },
+    {
+      "id": 13,
+      "type": 4,
+      "name": "c-4",
+      "description": "C-4 is composed of explosives, plastic binder, plasticizer to make it malleable, and usually a marker or odorizing taggant chemical."
+    },
+    {
+      "id": 14,
+      "type": 4,
+      "name": "atom",
+      "description": "Destroy the enemies large stuff with max power."
+    },
+    {
+      "id": 15,
+      "type": 5,
+      "name": "shallow",
+      "description": "Best way to work your way through a pesky reef."
+    },
+    {
+      "id": 16,
+      "type": 5,
+      "name": "mid_depth",
+      "description": "Blow up the ocean with our most popular seller."
+    },
+    {
+      "id": 17,
+      "type": 5,
+      "name": "deep_water",
+      "description": "High charged explosive under high pressure at low depths."
+    }
+  ]
 }
