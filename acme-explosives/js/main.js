@@ -1,5 +1,7 @@
+"use strict"
+
 // This function does one thing, and returns a promise
-var loadCategories = function() {
+let loadCategories = function() {
   return new Promise((resolve, reject) => {
     $.ajax("json/categories.json")
 
@@ -13,15 +15,11 @@ var loadCategories = function() {
 
 // This function does one thing, and returns a promise
 // Passing in result of firstXHR would be to build object
-var loadTypes = function(result_of_firstXHR) {
+let loadTypes = function(result_of_firstXHR) {
   return new Promise((resolve, reject) => {
     $.ajax("json/types.json")
 
     .done(function(data) {
-      var acmeObj = {
-        jsonOne: result_of_firstXHR,
-        jsonTwo: data
-      }
       resolve(data);
     }).fail(function(xhr, status, error) {
       reject(error);
@@ -30,14 +28,11 @@ var loadTypes = function(result_of_firstXHR) {
 };
 
 // This function does one thing, and returns a promise
-var loadProducts = function(result_of_secondXHR) {
+let loadProducts = function(result_of_secondXHR) {
   return new Promise((resolve, reject) => {
     $.ajax("json/products.json")
 
     .done(function(data) {
-      var acmeObj = {
-        
-      }
       resolve(data);
     }).fail(function(xhr, status, error) {
       reject(error);
@@ -53,89 +48,94 @@ var loadProducts = function(result_of_secondXHR) {
   promise. This is how you can chain promises, and dictate the
   order of execution of multiple aynschronous operations.
  */
-var catArray = [];
 
-loadCategories()
-  .then(function(data1) {
-    console.log("data1", data1);
-    catArray.push(data1.categories)
-    return loadTypes(data1);
-  })
-  .then(function(data2) {
-   catArray.push(data2.types);
-    return loadProducts(data2);
-  }).then(function(data3){
-    catArray.push(data3.products);
-    console.log("catArray: ", catArray)
-  });
+// Defined in the event listener
+let selectedCategoryId;
+
+let categories;
+let types;
+let products;
+
+// Need function here to call what event cat fires
+function loadData() {
+  loadCategories()
+    .then(function(data1) {
+      categories = data1.categories;
+      return loadTypes(data1);
+    })
+    .then(function(data2) {
+      types = data2.types
+      return loadProducts(data2);
+    }).then(function(data3){
+      products = data3.products;
+      // This is where all the info is present in this asynchronous operation
+      //console.log("categories", categories);
+      //console.log("types", types);
+      //console.log("products", products);
+      // Here is where you use a function to display info 
+      buildDOM(); 
+    });
+}
 
 
+const $outputEl = $('#output');
+let outputString;
+let count;
 
+function buildDOM() {
+  count = 0;
+  outputString = "";
 
+  // Define the object of the selected category
+  let selectedCategoryObject = categories[selectedCategoryId];
+  console.log("selectedCategoryObject", selectedCategoryObject);
 
-// // ORIGINAL CODE
-// // This function does one thing, and returns a promise
-// var loadCategories = function() {
-//   return new Promise((resolve, reject) => {
-//     $.ajax({
-//       url: "json/categories.json"
-//     }).done(function(data) {
-//       resolve(data);
-//     }).fail(function(xhr, status, error) {
-//       reject(error);
-//     });
-//   })
-// };
+  // Assign variables to the current selection
+  let currentCategory;
+  let currentType;
+  let currentProduct;
 
-// // This function does one thing, and returns a promise
-// var loadTypes = function(result_of_firstXHR) {
-//   return new Promise((resolve, reject) => {
-//     $.ajax({
-//       url: "json/types.json",
-//       data: result_of_firstXHR
-//     }).done(function(data) {
-//       // create obj with first: second:
-//       resolve(data);
-//     }).fail(function(xhr, status, error) {
-//       reject(error);
-//     });
-//   })
-// };
+  // Loop through types by ID
+  for (let i = 0; i < types.length; i++) {
+    currentType = types[i];
+    //console.log("currentType", currentType);
+    currentCategory = currentType.category;
+    //console.log("currentCategory", currentCategory);
 
-// // This function does one thing, and returns a promise
-// var loadProducts = function(result_of_secondXHR) {
-//   return new Promise((resolve, reject) => {
-//     $.ajax({
-//       url: "json/products.json",
-//       data: result_of_secondXHR
-//     }).done(function(data) {
-//       resolve(data);
-//     }).fail(function(xhr, status, error) {
-//       reject(error);
-//     });
-//   })
-// };
+    if (currentCategory !== selectedCategoryId) {
+      continue;
+    }
+    //console.log("currentTypeSelected", currentType);
 
-// /*
-//   Now we use those Promises to describe the order of execution, 
-//   and how data flows between each one.
+    // Loop through products by ID
+    for (let j = 0; j < products.length; j++) {
+      currentProduct = products[j];
 
-//   Note how the resolve callback function, itself, returns another
-//   promise. This is how you can chain promises, and dictate the
-//   order of execution of multiple aynschronous operations.
-//  */
-// var catArray = [];
+      if (currentProduct.type !== currentType.id) {
+        continue;
+      }
+      console.log("currentProductSelected", currentProduct);
 
-// loadCategories()
-//   .then(function(data1) {
-//     console.log("data1", data1);
-//     catArray.push(data1.categories)
-//     return loadTypes(data1);
-//   })
-//   .then(function(data2) {
-//    catArray.push(data2.types);
-//     return loadProducts(data2);
-//   }).then(function(data3){
-//     catArray.push(data3.products);
-//     console.log("catArray: ", catArray)
-//   });
+      if (count % 3 === 0) {
+        outputString += `<div class='row'>`
+      }
+      outputString += `
+      <div class='col-md-4 card'>
+        <h4>Category:</h4>
+        <p>${selectedCategoryObject.name}</p>
+        <p>${currentType.name}</p>
+        <p>${currentType.description}</p>
+        <p>${currentProduct.name}</p>
+        <p>${currentProduct.description}</p>
+      </div>`
+
+      if ((count+1) % 3 === 0) {
+        outputString += `</div>`
+      count++;
+      }
+    }
+
+  }
+  $outputEl.html(outputString);
+}
+
