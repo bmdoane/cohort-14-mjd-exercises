@@ -17,8 +17,8 @@ function divide(a, b) {
 	return a / b;
 }
 
-function squared(a) {
-	return a * a;
+function squared(a, b) {
+	return Math.pow(a, b);
 }
 
 function squareRoot(a) {
@@ -31,41 +31,56 @@ function squareRoot(a) {
 // The user will then type in a new number and press enter.
 // The resulting value of the operation should then be in the text input.
 
+// Set variable for number input
 let input = $('#user-input');
+input.focus();
+let a;
+let b;
+let operation;
 
-$('#addition').click(function() {
-	// add(a, b);
-	console.log("Heyo");
+// Button div.on( events [, selector ] [, data ] )
+$('#operations').on('click', 'button', function() {
+	// Set a value for a argument
+	a = parseInt(input.val());
+	input.val('');
+	// Set variable for the cases argument
+	let buttonText = $(this).html();
+
+  switch (buttonText){
+    case "+":
+      operation = add;
+      break;
+    case "-":
+      operation = subtract;
+      break;
+    case "x":
+      operation = multiply;
+      break;
+    case "/":
+      operation = divide;
+      break;
+    case "Square":
+      operation = squared;
+      input.val(operation(a, 2));
+      break;
+    case "Square Root":
+      operation = squareRoot;
+      input.val(operation(a));
+      break;
+    default:
+      alert("What now?");
+  }
+
+  input.focus();
+  
 });
 
-$('#subtraction').click(function() {
-	// add(a, b);
-	console.log("Mio");
+
+input.keyup(function(e){
+  if (e.keyCode === 13){
+    b = parseInt(input.val());
+    input.val(operation(a, b));
+  }
+
 });
 
-$('#multiplication').click(function() {
-	// add(a, b);
-	console.log("You");
-});
-
-$('#division').click(function() {
-	// add(a, b);
-	console.log("No");
-});
-
-$('#sqr').click(function() {
-	// add(a, b);
-	console.log("That guy");
-});
-
-$('#sqrt').click(function() {
-	// add(a, b);
-	console.log("Pete?");
-});
-
-// function calculate() {
-// 	if (input.val() === '') {
-
-// 	}
-
-}

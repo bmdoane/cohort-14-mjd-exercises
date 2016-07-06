@@ -37,7 +37,7 @@ describe("The basic functions for a calculator", function() {
 	});
 
 	it("Should square an integer", function() {
-		expect(squared(5)).toBe(25);
+		expect(squared(5, 2)).toBe(25);
 	});
 
 	it("Should have a squareRoot function", function() {
