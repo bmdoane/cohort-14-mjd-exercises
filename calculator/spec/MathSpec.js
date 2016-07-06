@@ -16,4 +16,12 @@ describe("The basic functions for a calculator", function() {
 		expect(subtract(9, 7)).toBe(2);
 	});
 
+	it("Should have a multiply function", function() {
+		expect(multiply).toBeDefined();
+	});
+
+	it("Should multiply two integers", function() {
+		expect(multiply(10, 3)).toBe(30);
+	});
+
 });
